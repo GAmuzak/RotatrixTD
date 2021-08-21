@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4860602543186032946}
   - component: {fileID: 8420482085822248599}
   - component: {fileID: 5998645848696242781}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy_ufoYellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
