@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc84ae1a4a466cf478f7d837ea253011, type: 2}
+  - {fileID: 2100000, guid: cb2ac0bf134e7594f8da247004f48500, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,6 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1951250140460384307}
+  - component: {fileID: 660491389191183620}
   m_Layer: 0
   m_Name: ammo_machinegunLauncher
   m_TagString: Untagged
@@ -106,13 +107,30 @@ Transform:
   m_GameObject: {fileID: 1179920041494370953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 14.8125, y: 14.8125, z: 14.8125}
   m_Children:
   - {fileID: 9135953746246520161}
   - {fileID: 7642139862154464883}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &660491389191183620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179920041494370953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 816eb4ed552dd284d8a06b011f798b16, type: 2}
 --- !u!1 &8883395933866814085
 GameObject:
   m_ObjectHideFlags: 0
