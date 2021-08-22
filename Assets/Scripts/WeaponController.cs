@@ -29,7 +29,7 @@ public class WeaponController : MonoBehaviour
     {
         if (target == null) return;
         Vector3 dirn = target.transform.position - transform.position;
-        Vector3 rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dirn), Time.deltaTime*10f).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dirn), Time.deltaTime*30f).eulerAngles;
         transform.rotation=Quaternion.Euler(rotation.x, rotation.y, rotation.z);
         Shoot();
     }

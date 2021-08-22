@@ -48,5 +48,5 @@ MonoBehaviour:
   enemyContainer: {fileID: 0}
   startOffset: 0.5
   spawnRate: 0.5
-  countPerWave: 5
-  waveCoolDown: 3
+  countPerWave: 4
+  waveCoolDown: 4
