@@ -24,6 +24,7 @@ public class Base : MonoBehaviour
 
     private void ReduceHealth()
     {
+        if (health <= 0) return;
         health--;
         healthTextBox.text = health.ToString();
     }

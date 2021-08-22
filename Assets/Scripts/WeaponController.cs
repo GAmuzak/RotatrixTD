@@ -22,14 +22,14 @@ public class WeaponController : MonoBehaviour
     {
         leftGun = transform.GetChild(1);
         rightGun = transform.GetChild(2);
-        InvokeRepeating(nameof(FindClosestEnemy), 0f, 0.5f);
+        InvokeRepeating(nameof(FindClosestEnemy), 0f, 0.1f);
     }
 
     private void Update()
     {
         if (target == null) return;
         Vector3 dirn = target.transform.position - transform.position;
-        Vector3 rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dirn), Time.deltaTime*30f).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dirn), Time.deltaTime*10f).eulerAngles;
         transform.rotation=Quaternion.Euler(0f, rotation.y, 0f);
         Shoot();
     }
@@ -42,8 +42,18 @@ public class WeaponController : MonoBehaviour
         Vector3 forward = transform.forward;
         leftBullet.GetComponent<Rigidbody>().AddForce(bulletSpeed*forward);
         rightBullet.GetComponent<Rigidbody>().AddForce(bulletSpeed*forward);
+        StartCoroutine(DestroyBullets(leftBullet, rightBullet));
         canShoot = false;
         StartCoroutine(ShootCoolDown());
+    }
+
+    private IEnumerator DestroyBullets(GameObject leftBullet, GameObject rightBullet)
+    {
+        LeanTween.alpha(leftBullet, 0, 0.25f);
+        LeanTween.alpha(rightBullet, 0, 0.25f);
+        yield return new WaitForSeconds(0.25f);
+        Destroy(leftBullet);
+        Destroy(rightBullet);
     }
 
     private void FindClosestEnemy()
