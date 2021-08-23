@@ -5,6 +5,7 @@ public class Base : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healthTextBox;
     [Range(50, 150)][SerializeField] private int startingHealth;
+    [SerializeField] private GameManager gameManager;
 
     private int health = 0;
     private void Start()
@@ -24,7 +25,11 @@ public class Base : MonoBehaviour
 
     private void ReduceHealth()
     {
-        if (health <= 0) return;
+        if (health <= 0)
+        {
+            gameManager.EndGame();
+            return;
+        }
         health--;
         healthTextBox.text = health.ToString();
     }
