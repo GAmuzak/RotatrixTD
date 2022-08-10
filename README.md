@@ -1,4 +1,4 @@
-# Spin-Defense
+# Rotatrix
  Game Jam Submission for Kenney Jam 2021
  
  You can play the game here!
